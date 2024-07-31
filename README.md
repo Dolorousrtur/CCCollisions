@@ -3,6 +3,7 @@
 This is a CUDA module for pytorch which implements static and dynamic collision handling.
 It is used by [ContourCraft](https://github.com/dolorousrtur/contourcraft) paper (SIGGRAPH 2024).
 
+The code is quite messy at the moment so sorry about that.
 
 ## Installation
 
