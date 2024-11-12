@@ -1,4 +1,4 @@
-# CC-Collisions
+# CCCollisions
 
 This is a CUDA module for pytorch which implements static and dynamic collision handling.
 It is used by [ContourCraft](https://github.com/dolorousrtur/contourcraft) paper (SIGGRAPH 2024).
