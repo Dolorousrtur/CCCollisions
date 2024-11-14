@@ -186,37 +186,6 @@ __global__ void CreateHierarchy(BVHNodePtr<T> internal_nodes,
         // Store a pointer to the right most node that can be reached from this
         // internal node.
 
-        if (current_idx == 3871) {
-            int left_idx = -1;
-            if (curr_node->left->isLeaf()) {
-                left_idx = curr_node->left - leaf_nodes;
-                left_idx += (num_triangles - 1);
-            } else {
-                left_idx = curr_node->left - internal_nodes;
-            }
-
-            int right_idx = -1;
-            if (curr_node->right->isLeaf()) {
-                right_idx = curr_node->right - leaf_nodes;
-                right_idx += (num_triangles - 1);
-            } else {
-                right_idx = curr_node->right - internal_nodes;
-            }
-
-//            printf("\n\ncurrent_idx: %d, left idx: %d, right_ids: %d\n"
-//                  "left_bb: min: (%g, %g, %g)\tmax: (%g, %g, %g)\n"
-//                  "right_bb: min: (%g, %g, %g)\tmax: (%g, %g, %g)\n"
-//                  "curr_bb: min: (%g, %g, %g)\tmax: (%g, %g, %g)\n",
-//                   current_idx, left_idx, right_idx,
-//                   left_bb.min_t.x, left_bb.min_t.y,left_bb.min_t.z,
-//                   left_bb.max_t.x, left_bb.max_t.y,left_bb.max_t.z,
-//                   right_bb.min_t.x, right_bb.min_t.y,right_bb.min_t.z,
-//                   right_bb.max_t.x, right_bb.max_t.y,right_bb.max_t.z,
-//                   curr_node->bbox.min_t.x, curr_node->bbox.min_t.y,curr_node->bbox.min_t.z,
-//                   curr_node->bbox.max_t.x, curr_node->bbox.max_t.y,curr_node->bbox.max_t.z
-//            );
-        }
-
         curr_node->rightmost =
                 curr_node->left->rightmost > curr_node->right->rightmost
                 ? curr_node->left->rightmost
